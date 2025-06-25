@@ -1,0 +1,145 @@
+[gd_scene load_steps=4 format=3 uid="uid://co8aadibiq5j"]
+
+[ext_resource type="Script" uid="uid://dadgbxoyw060a" path="res://everything.gd" id="1_mqs57"]
+
+[sub_resource type="Gradient" id="Gradient_mqs57"]
+colors = PackedColorArray(0.258354, 0.000182801, 0.320302, 1, 0.664064, 0.00135902, 0.80777, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hxm7w"]
+gradient = SubResource("Gradient_mqs57")
+fill_from = Vector2(0, 1)
+
+[node name="EVERYTHING" type="Node2D"]
+script = ExtResource("1_mqs57")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(574, 325)
+scale = Vector2(17.9688, 10.0625)
+texture = SubResource("GradientTexture2D_hxm7w")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 726.0
+offset_bottom = 647.0
+current_tab = 0
+
+[node name="Combat" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MonsterName" type="RichTextLabel" parent="TabContainer/Combat"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 29.0
+offset_right = 514.0
+offset_bottom = 61.0
+text = "Monster"
+
+[node name="PlayerHealth" type="RichTextLabel" parent="TabContainer/Combat"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 554.0
+offset_right = 513.0
+offset_bottom = 586.0
+text = "PlayerHealth"
+
+[node name="EyeInfo" type="RichTextLabel" parent="TabContainer/Combat"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 109.0
+offset_right = 610.0
+offset_bottom = 177.0
+text = "nothing to see here"
+
+[node name="Button" type="Button" parent="TabContainer/Combat"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 425.0
+offset_right = 309.0
+offset_bottom = 500.0
+text = "Attack"
+
+[node name="Retreat" type="Button" parent="TabContainer/Combat"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 423.0
+offset_right = 536.0
+offset_bottom = 498.0
+text = "Retreat"
+
+[node name="MonsterHealthBar" type="ProgressBar" parent="TabContainer/Combat"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 61.0
+offset_right = 516.0
+offset_bottom = 88.0
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="TabContainer/Combat"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 555.0
+offset_right = 676.0
+offset_bottom = 582.0
+
+[node name="Inventory" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Relics" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Stats" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Fishing" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Tamagatchi" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="Gatcha" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 6
+
+[node name="Portal" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 7
+
+[node name="Rebirth" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 8
+
+[node name="Player Stats" type="RichTextLabel" parent="."]
+offset_left = 743.0
+offset_top = 94.0
+offset_right = 1130.0
+offset_bottom = 649.0
+text = "Player Stats"
+
+[node name="Exit Button" type="Button" parent="."]
+offset_left = 974.0
+offset_right = 1150.0
+offset_bottom = 49.0
+text = "Exit"
+
+[node name="SaveFilesList" type="OptionButton" parent="."]
+unique_name_in_owner = true
+offset_left = 733.0
+offset_top = 5.0
+offset_right = 971.0
+offset_bottom = 47.0
+
+[connection signal="item_selected" from="SaveFilesList" to="." method="_on_save_files_list_item_selected"]

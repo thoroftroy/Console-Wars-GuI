@@ -1,0 +1,20 @@
+# Godot-specific
+.import/
+.export/
+.export_templates/
+*.import
+*.godot/tmp/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Build / user state
+*.log
+*.tmp
+*.bak
+*.cfg
+*.ini
+
+# Godot cache
+*.mono
